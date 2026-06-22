@@ -42,13 +42,9 @@
   "paymentAccepted": "Cash, KNET",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "قطعة 1، شارع 6",
-    "addressLocality": "الصباحية",
-    "addressRegion": "الأحمدي",
+    "addressRegion": "الكويت",
     "addressCountry": "KW"
   },
-  "geo": { "@type": "GeoCoordinates", "latitude": 29.1064, "longitude": 48.1011 },
-  "hasMap": "https://www.google.com/maps?q=29.1064,48.1011",
   "areaServed": [
     {"@type": "AdministrativeArea", "name": "مبارك الكبير"},
     {"@type": "AdministrativeArea", "name": "الأحمدي"},
@@ -151,7 +147,7 @@ header.scrolled{box-shadow:0 10px 30px -18px rgba(11,27,43,.4)}
 .trust-i b{display:block;font-family:'Cairo';font-size:1.05rem}
 .trust-i small{color:#a9bace;font-size:.82rem}
 .hero-media{position:relative}
-.live-stack{position:absolute;top:28%;left:50%;transform:translate(-50%,-50%);z-index:5;display:flex;flex-direction:column;align-items:center;gap:10px}
+.live-stack{position:absolute;top:18%;left:50%;transform:translate(-50%,-50%);z-index:5;display:flex;flex-direction:column;align-items:center;gap:10px}
 .live-wrapper{position:relative;padding:4px;border-radius:100px;overflow:hidden}
 .live-wrapper::before{content:"";position:absolute;inset:-300%;background:conic-gradient(#ff0000,#ff7b00,#ffee00,#00ff88,#00d9ff,#004cff,#8f00ff,#ff00c8,#ff0000);animation:lrotate 2s linear infinite;filter:blur(8px)}
 .live-banner{position:relative;z-index:2;display:flex;align-items:center;gap:10px;background:#111827;padding:10px 22px;border-radius:100px;box-shadow:0 0 20px rgba(255,255,255,.15),inset 0 1px 1px rgba(255,255,255,.1)}
@@ -191,7 +187,8 @@ header.scrolled{box-shadow:0 10px 30px -18px rgba(11,27,43,.4)}
 .card:hover .card-ic svg{stroke:var(--navy)}
 .card h3{font-size:1.25rem;color:var(--navy);margin-bottom:9px}
 .card p{color:var(--muted);font-size:.97rem}
-.card .more{display:inline-flex;align-items:center;gap:6px;margin-top:14px;color:var(--amber-d);font-family:'Cairo';font-weight:700;font-size:.92rem}
+.card .more{display:inline-flex;align-items:center;gap:6px;margin-top:14px;color:var(--amber-d);font-family:'Cairo';font-weight:700;font-size:.92rem;cursor:pointer;transition:gap .25s}
+.card .more:hover{gap:12px;color:var(--navy)}
 
 /* ---- Stats band ---- */
 .stats{background:var(--navy);color:#fff;border-radius:26px;padding:44px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;box-shadow:var(--shadow)}
@@ -209,7 +206,7 @@ header.scrolled{box-shadow:0 10px 30px -18px rgba(11,27,43,.4)}
 .emg .btn-call{position:relative}
 .emg-num{position:relative;text-align:center}
 .emg-num small{display:block;color:#ffd9d9;font-family:'Cairo';font-weight:600}
-.emg-num b{font-family:'Cairo';font-weight:900;font-size:clamp(1.8rem,4vw,2.6rem);direction:ltr;letter-spacing:1px}
+.emg-num b{font-family:'Cairo';font-weight:900;font-size:clamp(1.8rem,4vw,2.6rem);direction:ltr;unicode-bidi:isolate;letter-spacing:1px;display:inline-block}
 
 /* ---- Gallery (before/after) ---- */
 .gal{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:42px}
@@ -281,14 +278,14 @@ footer{background:var(--ink);color:#9fb0c1;padding:60px 0 28px}
 .foot-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:42px;padding-top:22px;text-align:center;font-size:.85rem}
 
 /* ---- Floating buttons ---- */
-.float{position:fixed;bottom:22px;left:18px;z-index:90;display:flex;flex-direction:column;gap:12px}
-.fab{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;box-shadow:0 14px 30px -8px rgba(0,0,0,.4);transition:.25s;position:relative}
-.fab svg{width:30px;height:30px}
-.fab.wa{background:var(--green)}
-.fab.call{background:var(--amber)}
+.float{position:fixed;bottom:22px;left:18px;z-index:90;display:flex;flex-direction:column;gap:16px}
+.fab{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;box-shadow:0 14px 30px -8px rgba(0,0,0,.4);transition:.25s;position:relative;overflow:hidden}
+.fab::before{content:"";position:absolute;inset:-150%;background:conic-gradient(#ff0000,#ff7b00,#ffee00,#00ff88,#00d9ff,#004cff,#8f00ff,#ff00c8,#ff0000);animation:lrotate 2.5s linear infinite;z-index:0}
+.fab::after{content:"";position:absolute;inset:3px;border-radius:50%;z-index:1}
+.fab.wa::after{background:var(--green)}
+.fab.call::after{background:var(--amber)}
+.fab svg{width:30px;height:30px;position:relative;z-index:2}
 .fab:hover{transform:scale(1.1)}
-.fab.call::after{content:"";position:absolute;inset:0;border-radius:50%;border:3px solid var(--amber);animation:ring 1.8s infinite}
-@keyframes ring{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.5);opacity:0}}
 .mobile-bar{display:none}
 
 /* reveal */
@@ -302,7 +299,7 @@ footer{background:var(--ink);color:#9fb0c1;padding:60px 0 28px}
   .live-banner{padding:8px 16px;gap:7px}
   .live-text,.live-time,.live-text2{font-size:.9rem}
   .live-dot{width:11px;height:11px}
-  .live-stack{top:24%;gap:7px}
+  .live-stack{top:15%;gap:7px}
   .cards,.reviews,.areas,.steps{grid-template-columns:1fr 1fr}
   .stats{grid-template-columns:1fr 1fr;padding:34px}
   .emg{grid-template-columns:1fr;text-align:center}
@@ -329,6 +326,8 @@ footer{background:var(--ink);color:#9fb0c1;padding:60px 0 28px}
   body{padding-bottom:54px}
   .badge-float{display:none}
 }
+.gov-link{color:var(--navy);text-decoration:none;transition:color .2s,letter-spacing .2s;cursor:pointer}
+.gov-link:hover{color:var(--amber-d);letter-spacing:.5px}
 </style>
 </head>
 <body>
@@ -338,7 +337,7 @@ footer{background:var(--ink);color:#9fb0c1;padding:60px 0 28px}
   <div class="wrap">
     <div>خدمة طوارئ على مدار الساعة — <b>تصلك أينما كنت في الكويت</b></div>
     <div class="tb-r">
-      <a href="tel:+96560601740"><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--amber)"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1l-2.2 2z"/></svg> +965 6060 1740</a>
+      <a href="tel:+96560601740" dir="ltr"><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--amber)"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1l-2.2 2z"/></svg> +965 6060 1740</a>
       <span>السبت - الجمعة | 24 ساعة</span>
     </div>
   </div>
@@ -418,37 +417,37 @@ footer{background:var(--ink);color:#9fb0c1;padding:60px 0 28px}
         <div class="card-ic"><svg viewBox="0 0 24 24"><path d="M3 14h12v-4a2 2 0 0 0-2-2H8L6 5H3v9z"/><circle cx="7" cy="17" r="2.3"/><circle cx="16" cy="17" r="2.3"/><path d="M15 14h5l2 3v-1"/></svg></div>
         <h3>سحب سيارات الكويت</h3>
         <p>سحب فوري للسيارات المتعطلة أو بعد الحوادث بأحدث المعدات وبأيدي فنيين مدرّبين على التعامل مع كل أنواع المركبات.</p>
-        <span class="more">اطلب الخدمة ←</span>
+        <a href="tel:+96560601740" class="more">اطلب الخدمة ←</a>
       </div>
       <div class="card reveal">
         <div class="card-ic"><svg viewBox="0 0 24 24"><rect x="2" y="13" width="20" height="3" rx="1"/><path d="M4 13l3-5h8l4 5"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg></div>
         <h3>سطحة الكويت الهيدروليك</h3>
         <p>سطحة منخفضة الميل مثالية للسيارات الرياضية والفاخرة والمنخفضة، تحميل أرضي يحمي الصدام والهيكل من أي خدوش.</p>
-        <span class="more">اطلب الخدمة ←</span>
+        <a href="tel:+96560601740" class="more">اطلب الخدمة ←</a>
       </div>
       <div class="card reveal">
         <div class="card-ic"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 8l9-5 9 5M5 10v8h14v-8"/></svg></div>
         <h3>نقل سيارات بين المحافظات</h3>
         <p>ننقل سيارتك بأمان من وإلى المعارض والورش والموانئ بين جميع محافظات الكويت مع تأمين كامل أثناء النقل.</p>
-        <span class="more">اطلب الخدمة ←</span>
+        <a href="tel:+96560601740" class="more">اطلب الخدمة ←</a>
       </div>
       <div class="card reveal">
         <div class="card-ic"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></div>
         <h3>تشغيل وبطاريات</h3>
         <p>بطارية فصلت فجأة؟ نصلك بكيبلات وبطاريات بديلة ونعيد تشغيل سيارتك في موقعك خلال دقائق دون الحاجة للسحب.</p>
-        <span class="more">اطلب الخدمة ←</span>
+        <a href="tel:+96560601740" class="more">اطلب الخدمة ←</a>
       </div>
       <div class="card reveal">
         <div class="card-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></div>
         <h3>تبديل وإصلاح الإطارات</h3>
         <p>بنشر على الطريق السريع؟ نبدّل الإطار أو نصلحه في مكانك بسرعة وأمان حتى تكمل طريقك دون قلق.</p>
-        <span class="more">اطلب الخدمة ←</span>
+        <a href="tel:+96560601740" class="more">اطلب الخدمة ←</a>
       </div>
       <div class="card reveal">
         <div class="card-ic"><svg viewBox="0 0 24 24"><path d="M5 11h14l-1 9H6l-1-9z"/><path d="M9 11V7a3 3 0 0 1 6 0v4"/></svg></div>
         <h3>توصيل وقود طارئ</h3>
         <p>نفد البنزين قبل المحطة؟ نوصّل لك كمية الوقود التي تحتاجها في أي طريق بالكويت لتعود للسير فوراً.</p>
-        <span class="more">اطلب الخدمة ←</span>
+        <a href="tel:+96560601740" class="more">اطلب الخدمة ←</a>
       </div>
     </div>
   </div>
@@ -479,7 +478,7 @@ footer{background:var(--ink);color:#9fb0c1;padding:60px 0 28px}
       </div>
       <div class="emg-num">
         <small>خط الطوارئ المباشر</small>
-        <b>+965 6060 1740</b>
+        <b dir="ltr">+965 6060 1740</b>
       </div>
     </div>
   </div>
@@ -581,7 +580,7 @@ footer{background:var(--ink);color:#9fb0c1;padding:60px 0 28px}
         <ul>
           <li><span class="mi"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1l-2.2 2z"/></svg></span><div><b>اتصل بنا</b><small dir="ltr">+965 6060 1740</small></div></li>
           <li><span class="mi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b>ساعات العمل</b><small>24 ساعة — طوال أيام الأسبوع</small></div></li>
-          <li><span class="mi"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><b>العنوان</b><small>الصباحية، قطعة 1، شارع 6 — محافظة الأحمدي</small></div></li>
+          <li><span class="mi"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><b>منطقة الخدمة</b><small>نخدمكم في جميع محافظات الكويت</small></div></li>
           <li><span class="mi"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><b>نطاق الخدمة</b><small>مبارك الكبير و الاحمدي وجميع محافظات الكويت</small></div></li>
         </ul>
         <a href="https://wa.me/96560601740" class="btn btn-wa">
@@ -590,7 +589,7 @@ footer{background:var(--ink);color:#9fb0c1;padding:60px 0 28px}
         </a>
       </div>
       <div class="map-frame">
-        <iframe src="https://www.google.com/maps?q=29.1064,48.1011&hl=ar&z=14&output=embed" loading="lazy" title="موقع ونش مبارك الكبير و الاحمدي - الصباحية" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps?q=Kuwait&hl=ar&z=9&output=embed" loading="lazy" title="منطقة خدمة ونش الكويت - جميع المحافظات" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </div>
@@ -637,7 +636,7 @@ footer{background:var(--ink);color:#9fb0c1;padding:60px 0 28px}
 <a href="services/tires.html" class="ilink">تبديل الإطارات على الطريق</a>
 <a href="services/winsh-24h.html" class="ilink">ونش الكويت 24 ساعة</a>
 </div>
-<div class="center reveal" style="margin-top:36px"><h3 style="color:var(--navy);font-size:1.3rem">ونش محافظة مبارك الكبير</h3></div>
+<div class="center reveal" style="margin-top:36px"><h3 style="font-size:1.3rem;margin:0"><a href="areas/mubarak-city.html" class="gov-link">ونش محافظة مبارك الكبير</a></h3></div>
 <div class="ilinks">
 <a href="areas/abu-fteira.html" class="ilink">ونش أبو فطيرة</a>
 <a href="areas/abu-hasaniya.html" class="ilink">ونش أبو الحصانية</a>
@@ -648,7 +647,7 @@ footer{background:var(--ink);color:#9fb0c1;padding:60px 0 28px}
 <a href="areas/qusour.html" class="ilink">ونش القصور</a>
 <a href="areas/sabah-salem.html" class="ilink">ونش صباح السالم</a>
 </div>
-<div class="center reveal" style="margin-top:36px"><h3 style="color:var(--navy);font-size:1.3rem">ونش محافظة الأحمدي</h3></div>
+<div class="center reveal" style="margin-top:36px"><h3 style="font-size:1.3rem;margin:0"><a href="areas/ahmadi-city.html" class="gov-link">ونش محافظة الأحمدي</a></h3></div>
 <div class="ilinks">
 <a href="areas/abu-halifa.html" class="ilink">ونش أبو حليفة</a>
 <a href="areas/ahmadi-city.html" class="ilink">ونش الأحمدي</a>
@@ -667,7 +666,7 @@ footer{background:var(--ink);color:#9fb0c1;padding:60px 0 28px}
 <a href="areas/sabahiya.html" class="ilink">ونش الصباحية</a>
 <a href="areas/wafra.html" class="ilink">ونش الوفرة</a>
 </div>
-<div class="center reveal" style="margin-top:36px"><h3 style="color:var(--navy);font-size:1.3rem">ونش محافظة حولي</h3></div>
+<div class="center reveal" style="margin-top:36px"><h3 style="font-size:1.3rem;margin:0"><a href="areas/hawalli-city.html" class="gov-link">ونش محافظة حولي</a></h3></div>
 <div class="ilinks">
 <a href="areas/bayan.html" class="ilink">ونش بيان</a>
 <a href="areas/hawalli-city.html" class="ilink">ونش حولي</a>
@@ -678,7 +677,7 @@ footer{background:var(--ink);color:#9fb0c1;padding:60px 0 28px}
 <a href="areas/salwa.html" class="ilink">ونش سلوى</a>
 <a href="areas/zahra.html" class="ilink">ونش الزهراء</a>
 </div>
-<div class="center reveal" style="margin-top:36px"><h3 style="color:var(--navy);font-size:1.3rem">ونش محافظة الفروانية</h3></div>
+<div class="center reveal" style="margin-top:36px"><h3 style="font-size:1.3rem;margin:0"><a href="areas/farwaniya-city.html" class="gov-link">ونش محافظة الفروانية</a></h3></div>
 <div class="ilinks">
 <a href="areas/andalus.html" class="ilink">ونش الأندلس</a>
 <a href="areas/ardiya.html" class="ilink">ونش العارضية</a>
@@ -688,7 +687,7 @@ footer{background:var(--ink);color:#9fb0c1;padding:60px 0 28px}
 <a href="areas/khaitan.html" class="ilink">ونش خيطان</a>
 <a href="areas/omariya.html" class="ilink">ونش العمرية</a>
 </div>
-<div class="center reveal" style="margin-top:36px"><h3 style="color:var(--navy);font-size:1.3rem">ونش محافظة العاصمة</h3></div>
+<div class="center reveal" style="margin-top:36px"><h3 style="font-size:1.3rem;margin:0"><a href="areas/sharq.html" class="gov-link">ونش محافظة العاصمة</a></h3></div>
 <div class="ilinks">
 <a href="areas/dasma.html" class="ilink">ونش الدسمة</a>
 <a href="areas/kaifan.html" class="ilink">ونش كيفان</a>
@@ -697,7 +696,7 @@ footer{background:var(--ink);color:#9fb0c1;padding:60px 0 28px}
 <a href="areas/sharq.html" class="ilink">ونش الشرق</a>
 <a href="areas/shuwaikh.html" class="ilink">ونش الشويخ</a>
 </div>
-<div class="center reveal" style="margin-top:36px"><h3 style="color:var(--navy);font-size:1.3rem">ونش محافظة الجهراء</h3></div>
+<div class="center reveal" style="margin-top:36px"><h3 style="font-size:1.3rem;margin:0"><a href="areas/jahra-city.html" class="gov-link">ونش محافظة الجهراء</a></h3></div>
 <div class="ilinks">
 <a href="areas/jahra-city.html" class="ilink">ونش الجهراء</a>
 <a href="areas/naseem.html" class="ilink">ونش النسيم</a>
@@ -735,7 +734,7 @@ footer{background:var(--ink);color:#9fb0c1;padding:60px 0 28px}
         <a href="tel:+96560601740" dir="ltr">📞 +965 6060 1740</a>
         <a href="https://wa.me/96560601740">💬 واتساب مباشر</a>
         <a href="#">🕐 24 ساعة / 7 أيام</a>
-        <a href="https://www.google.com/maps?q=29.1064,48.1011">📍 الصباحية، قطعة 1، شارع 6</a>
+        <a href="#areas">📍 نخدم جميع مناطق الكويت</a>
       </div>
     </div>
     <div class="foot-bottom">© 2026 ونش الكويت — جميع الحقوق محفوظة | ونش الكويت · سطحة الكويت · سحب ونقل سيارات الكويت 24 ساعة</div>
