@@ -1,12 +1,14 @@
 
 // Header shadow on scroll
 const hdr=document.getElementById('hdr');
-addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>10),{passive:true});
+if(hdr){addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>10),{passive:true});}
 
 // Mobile menu
 const burger=document.getElementById('burger'),menu=document.getElementById('menu');
-burger.addEventListener('click',()=>menu.classList.toggle('show'));
-menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('show')));
+if(burger&&menu){
+  burger.addEventListener('click',()=>menu.classList.toggle('show'));
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('show')));
+}
 
 // FAQ accordion
 document.querySelectorAll('.qa button').forEach(b=>{
