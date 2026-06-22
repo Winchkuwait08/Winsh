@@ -254,7 +254,7 @@ footer{background:var(--ink);color:#9fb0c1;padding:60px 0 28px}
 .ilink:hover{border-color:var(--amber);background:var(--amber-soft);transform:translateY(-3px)}
 
 /* ===== Live "نعمل الآن" banner on hero image ===== */
-.live-stack{position:absolute;top:38%;left:50%;transform:translate(-50%,-50%);z-index:5;display:flex;flex-direction:column;align-items:center;gap:10px}
+.live-stack{position:absolute;top:28%;left:50%;transform:translate(-50%,-50%);z-index:5;display:flex;flex-direction:column;align-items:center;gap:10px}
 .live-wrapper{position:relative;padding:4px;border-radius:100px;overflow:hidden}
 .live-wrapper::before{content:"";position:absolute;inset:-300%;background:conic-gradient(#ff0000,#ff7b00,#ffee00,#00ff88,#00d9ff,#004cff,#8f00ff,#ff00c8,#ff0000);animation:lrotate 2s linear infinite;filter:blur(8px)}
 .live-banner{position:relative;z-index:2;display:flex;align-items:center;gap:10px;background:#111827;padding:10px 22px;border-radius:100px;box-shadow:0 0 20px rgba(255,255,255,.15),inset 0 1px 1px rgba(255,255,255,.1)}
@@ -266,4 +266,4 @@ footer{background:var(--ink);color:#9fb0c1;padding:60px 0 28px}
 @keyframes lrotate{from{transform:rotate(0)}to{transform:rotate(360deg)}}
 @keyframes lpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.3)}}
 @keyframes lshine{100%{left:160%}}
-@media(max-width:680px){.live-banner{padding:8px 16px;gap:7px}.live-text,.live-time,.live-text2{font-size:.9rem}.live-dot{width:11px;height:11px}.live-stack{top:34%;gap:7px}}
+@media(max-width:680px){.live-banner{padding:8px 16px;gap:7px}.live-text,.live-time,.live-text2{font-size:.9rem}.live-dot{width:11px;height:11px}.live-stack{top:24%;gap:7px}}
