@@ -112,7 +112,9 @@ header{position:sticky;top:0;z-index:60;background:#0a1410;border-bottom:1.5px s
 header.scrolled{box-shadow:0 10px 30px -18px rgba(11,27,43,.4)}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:14px}
 .logo{display:flex;align-items:center;gap:11px}
-.logo-img{height:90px;width:auto;display:block;filter:drop-shadow(0 0 12px rgba(29,227,122,.55))}
+.logo-img{height:110px;width:auto;display:block;filter:drop-shadow(0 0 14px rgba(29,227,122,.6))}
+.logo-name{color:#fff;font-family:'Cairo';font-weight:900;font-size:1.15rem;line-height:1.35;text-shadow:0 0 8px rgba(255,255,255,.3)}
+.logo-name span{color:#1de37a;text-shadow:0 0 12px rgba(29,227,122,.7),0 0 22px rgba(29,227,122,.4);display:block;font-size:1.05rem}
 @keyframes logoGlow{0%,100%{text-shadow:0 0 10px rgba(255,255,255,.35),0 0 20px rgba(29,227,122,.3)}50%{text-shadow:0 0 16px rgba(255,255,255,.5),0 0 32px rgba(29,227,122,.55)}}
 .logo-mark{width:46px;height:46px;border-radius:13px;background:linear-gradient(150deg,var(--amber),var(--amber-d));display:grid;place-items:center;box-shadow:0 8px 20px -8px var(--amber-d)}
 .logo-mark svg{width:26px;height:26px}
@@ -341,7 +343,9 @@ footer{background:var(--ink);color:#9fb0c1;padding:60px 0 28px}
   .foot-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:680px){
-  .logo-img{height:80px}
+  .logo-img{height:72px}
+  .logo-name{font-size:.95rem}
+  .logo-name span{font-size:.88rem}
   nav{padding:10px 0}
   .sec{padding:54px 0}
   .logo{font-size:1.05rem;gap:7px}
@@ -399,7 +403,8 @@ footer{background:var(--ink);color:#9fb0c1;padding:60px 0 28px}
 <header id="hdr">
   <div class="wrap nav">
     <a href="#" class="logo">
-      <img src="https://ik.imagekit.io/Myupload/Kuwait-winch-60601740.png" alt="ونش مبارك الكبير و الاحمدي" class="logo-img" width="150" height="100" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span style=&quot;color:#1de37a;font-family:Cairo;font-weight:900;font-size:1.1rem;text-shadow:0 0 10px rgba(29,227,122,.6)&quot;>ونش <span style=&quot;color:#fff&quot;>مبارك الكبير و الاحمدي</span></span>')">
+      <img src="https://ik.imagekit.io/Myupload/Kuwait-winch-60601740.png" alt="ونش مبارك الكبير و الاحمدي" class="logo-img" width="150" height="100" onerror="this.style.display='none'">
+      <span class="logo-name">ونش <span translate="no">مبارك الكبير و الاحمدي</span></span>
     </a>
     <nav class="menu" id="menu">
       <a href="#services">خدماتنا</a>
