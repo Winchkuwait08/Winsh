@@ -27,21 +27,23 @@ img{max-width:100%;display:block}
 .topbar a{display:inline-flex;gap:6px;align-items:center}
 
 /* ---- Header ---- */
-header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:.3s}
+header{position:sticky;top:0;z-index:60;background:rgba(10,20,16,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(29,227,122,.25);transition:.3s}
 header.scrolled{box-shadow:0 10px 30px -18px rgba(11,27,43,.4)}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:14px}
-.logo{display:flex;align-items:center;gap:11px;font-family:'Cairo';font-weight:900;font-size:1.32rem;color:#e8f5ee}
+.logo{display:flex;align-items:center;gap:11px}
+.logo-img{height:54px;width:auto;display:block;filter:drop-shadow(0 0 8px rgba(29,227,122,.4))}
+@keyframes logoGlow{0%,100%{text-shadow:0 0 10px rgba(255,255,255,.35),0 0 20px rgba(29,227,122,.3)}50%{text-shadow:0 0 16px rgba(255,255,255,.5),0 0 32px rgba(29,227,122,.55)}}
 .logo-mark{width:46px;height:46px;border-radius:13px;background:linear-gradient(150deg,var(--amber),var(--amber-d));display:grid;place-items:center;box-shadow:0 8px 20px -8px var(--amber-d)}
 .logo-mark svg{width:26px;height:26px}
-.logo span{color:var(--amber-d)}
+.logo span{color:#1de37a;text-shadow:0 0 12px rgba(29,227,122,.7),0 0 24px rgba(29,227,122,.45)}
 .menu{display:flex;gap:26px;font-family:'Cairo';font-weight:600;font-size:.95rem}
 .menu a{position:relative;color:#e8f5ee;padding:4px 0;transition:.2s}
 .menu a::after{content:"";position:absolute;bottom:-3px;right:0;width:0;height:2px;background:var(--amber);transition:.3s}
 .menu a:hover{color:var(--amber-d)}.menu a:hover::after{width:100%}
-.nav-cta{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;font-family:'Cairo';font-weight:700;padding:11px 22px;border-radius:50px;transition:.25s;white-space:nowrap}
+.nav-cta{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1de37a,#0a8f4d);color:#06140d;font-family:'Cairo';font-weight:800;padding:11px 22px;border-radius:50px;transition:.25s;white-space:nowrap;box-shadow:0 0 14px rgba(29,227,122,.4)}
 .nav-cta:hover{background:var(--amber-d);transform:translateY(-2px)}
 .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:0}
-.burger span{width:26px;height:3px;background:var(--navy);border-radius:3px;transition:.3s}
+.burger span{width:26px;height:3px;background:#1de37a;border-radius:3px;transition:.3s;box-shadow:0 0 6px rgba(29,227,122,.5)}
 
 /* ---- Hero ---- */
 .hero{position:relative;background:linear-gradient(140deg,var(--navy) 0%,var(--steel) 100%);color:#fff;overflow:hidden}
@@ -183,7 +185,7 @@ footer{background:var(--ink);color:#9fb0c1;padding:60px 0 28px}
 .foot-grid a{display:block;margin-bottom:10px;transition:.2s}
 .foot-grid a:hover{color:var(--amber)}
 .foot-grid .logo{color:#fff;margin-bottom:14px}
-.foot-grid .logo span{color:var(--amber)}
+.foot-grid .logo span{color:#1de37a;text-shadow:0 0 12px rgba(29,227,122,.7),0 0 24px rgba(29,227,122,.45)}
 .foot-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:42px;padding-top:22px;text-align:center;font-size:.85rem}
 
 /* ---- Floating buttons ---- */
@@ -310,3 +312,10 @@ footer{background:var(--ink);color:#9fb0c1;padding:60px 0 28px}
 .ip-cta p{color:#cfe8db;font-weight:700;margin-bottom:14px}
 .ip-call{display:inline-block;background:linear-gradient(135deg,#1de37a,#0a8f4d);color:#06140d;text-decoration:none;padding:14px 30px;border-radius:50px;font-family:'Cairo';font-weight:900;font-size:1.05rem;box-shadow:0 0 18px rgba(29,227,122,.4);transition:.25s}
 .ip-call:hover{transform:scale(1.05);box-shadow:0 0 26px rgba(29,227,122,.6)}
+
+.loc-ic{background:radial-gradient(circle at 35% 30%,#10301f,#06140d) !important}
+.fab-neon.loc .loc-sub{color:#1de37a;font-family:Cairo;font-weight:700;font-size:.72rem;text-shadow:0 0 6px rgba(29,227,122,.5)}
+.fab-neon.loc{cursor:pointer;border:1px solid rgba(29,227,122,.2);background:rgba(255,255,255,.03);font-family:inherit}
+.fab-neon.loc.loading .loc-ic{animation:locPulse .8s infinite}
+@keyframes locPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(.85);opacity:.6}}
+.fab-neon.loc.loading b::after{content:"..."}

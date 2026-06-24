@@ -47,3 +47,28 @@ function vote(btn,option){
   const r=document.getElementById('pollResult');
   if(r)r.innerHTML='✅ شكراً لمشاركتك! اخترت: '+option+'<br>'+(msgs[option]||'')+'<br>تحتاج مساعدة فورية؟ اتصل بنا الآن على 60601740.';
 }
+
+// Share location via WhatsApp
+function shareLocation(){
+  const btn=document.getElementById('locBtn');
+  if(!navigator.geolocation){
+    window.open('https://wa.me/96560601740?text='+encodeURIComponent('مرحباً، أحتاج ونش وموقعي هو: (لم يتمكن المتصفح من تحديد الموقع تلقائياً)'),'_blank');
+    return;
+  }
+  if(btn){btn.classList.add('loading');}
+  navigator.geolocation.getCurrentPosition(
+    (pos)=>{
+      const lat=pos.coords.latitude.toFixed(6), lng=pos.coords.longitude.toFixed(6);
+      const maps='https://maps.google.com/?q='+lat+','+lng;
+      const msg='مرحباً، أحتاج خدمة ونش 🚗\nموقعي الحالي:\n'+maps;
+      window.open('https://wa.me/96560601740?text='+encodeURIComponent(msg),'_blank');
+      if(btn){btn.classList.remove('loading');}
+    },
+    (err)=>{
+      if(btn){btn.classList.remove('loading');}
+      alert('لتفعيل الموقع، يرجى السماح بالوصول للموقع في المتصفح. سيتم فتح واتساب لإرسال موقعك يدوياً.');
+      window.open('https://wa.me/96560601740?text='+encodeURIComponent('مرحباً، أحتاج ونش. موقعي هو:'),'_blank');
+    },
+    {enableHighAccuracy:true,timeout:10000,maximumAge:0}
+  );
+}
