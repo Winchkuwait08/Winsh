@@ -9,6 +9,9 @@
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#0B1B2B">
 <link rel="canonical" href="https://www.winshkuwait.com/">
+<link rel="alternate" hreflang="ar-KW" href="https://www.winshkuwait.com/">
+<link rel="alternate" hreflang="ar" href="https://www.winshkuwait.com/">
+<link rel="alternate" hreflang="x-default" href="https://www.winshkuwait.com/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -356,6 +359,16 @@ footer{background:var(--ink);color:#9fb0c1;padding:60px 0 28px}
   .badge-float{display:none}
 }
 .gov-link{color:#e8f5ee;text-decoration:none;transition:color .2s,letter-spacing .2s;cursor:pointer}
+.howto-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px;max-width:760px;margin-inline:auto}
+.howto-step{position:relative;background:linear-gradient(160deg,#0d1f17,#0a1410);border:1.5px solid rgba(29,227,122,.3);border-radius:20px;padding:30px 24px 24px;text-align:center}
+.hs-num{position:absolute;top:-18px;left:50%;transform:translateX(-50%);width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#1de37a,#0a8f4d);color:#06140d;display:grid;place-items:center;font-family:'Cairo';font-weight:900;font-size:1.3rem;box-shadow:0 0 16px rgba(29,227,122,.5)}
+.howto-step h3{color:#1de37a;font-size:1.2rem;margin:8px 0 10px}
+.howto-step p{color:#cfe8db;font-size:1rem}
+.safety-tip{display:flex;align-items:flex-start;gap:16px;margin-top:26px;max-width:760px;margin-inline:auto;background:rgba(255,193,7,.06);border:1.5px solid rgba(255,193,7,.3);border-radius:16px;padding:20px 22px}
+.safety-tip .st-icon{font-size:1.8rem;flex-shrink:0}
+.safety-tip b{color:#ffd54f;font-family:'Cairo';font-size:1.1rem;display:block;margin-bottom:6px}
+.safety-tip p{color:#cfe8db;font-size:1rem;margin:0}
+@media(max-width:680px){.howto-grid{grid-template-columns:1fr;gap:28px}.safety-tip{flex-direction:column;text-align:center;align-items:center}}
 .gov-link:hover{color:var(--amber-d);letter-spacing:.5px}
 </style>
 </head>
@@ -624,6 +637,32 @@ footer{background:var(--ink);color:#9fb0c1;padding:60px 0 28px}
   </div>
 </section>
 
+<!-- Safety tip + How to order -->
+<section class="sec howto-sec">
+  <div class="wrap">
+    <div class="center reveal"><span class="eyebrow">⚡ بخطوتين فقط</span><h2 class="sec-title">كيف تطلب الونش؟</h2></div>
+    <div class="howto-grid">
+      <div class="howto-step reveal">
+        <span class="hs-num">1</span>
+        <h3>اضغط زر الاتصال</h3>
+        <p>تواصل معنا مباشرة على الرقم، ونرد عليك فوراً في أي وقت.</p>
+      </div>
+      <div class="howto-step reveal">
+        <span class="hs-num">2</span>
+        <h3>أرسل موقعك</h3>
+        <p>حدد مكانك عبر الواتساب واسترخِ.. الونش في طريقه إليك الآن!</p>
+      </div>
+    </div>
+    <div class="safety-tip reveal">
+      <span class="st-icon">⚠️</span>
+      <div>
+        <b>نصيحة أمان مهمة</b>
+        <p>إذا تعطلت سيارتك على الطريق السريع، شغّل إشارات التحذير (الرباعي) فوراً، وانتظر في مكان آمن خلف الحاجز الحديدي حتى وصول الونش.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="sec" id="faq">
   <div class="wrap">
@@ -689,7 +728,7 @@ footer{background:var(--ink);color:#9fb0c1;padding:60px 0 28px}
 <a href="areas/fintas.html" class="ilink">ونش <span translate="no">الفنطاس</span></a>
 <a href="areas/hadiya.html" class="ilink">ونش <span translate="no">هدية</span></a>
 <a href="areas/jaber-ali.html" class="ilink">ونش <span translate="no">جابر العلي</span></a>
-<a href="areas/mahboula.html" class="ilink">ونش <span translate="no">المهبولة</span></a>
+<a href="areas/mahboula.html" class="ilink">ونش <span translate="no">المهبولة</span></a><a href="areas/hadiya-south.html" class="ilink">ونش <span translate="no">جنوب هديه</span></a><a href="areas/mina-abdullah.html" class="ilink">ونش <span translate="no">ميناء عبدالله</span></a><a href="areas/sabah-ahmad.html" class="ilink">ونش <span translate="no">صباح الأحمد</span></a><a href="areas/julaia.html" class="ilink">ونش <span translate="no">الجليعة</span></a><a href="areas/shuaiba.html" class="ilink">ونش <span translate="no">الشعيبة</span></a>
 <a href="areas/mangaf-2.html" class="ilink">ونش <span translate="no">المنقف</span></a>
 <a href="areas/riqqa-south.html" class="ilink">ونش <span translate="no"><span translate="no">الرقة</span> الجنوبية</span></a>
 <a href="areas/riqqa.html" class="ilink">ونش <span translate="no">الرقة</span></a>
