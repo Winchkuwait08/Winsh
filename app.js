@@ -33,3 +33,17 @@ document.addEventListener('click',(e)=>{
     openBtn.classList.add('show');
   }
 },true);
+
+// Interactive battery poll
+function vote(btn,option){
+  document.querySelectorAll('.poll-options button').forEach(b=>b.classList.remove('picked'));
+  if(btn)btn.classList.add('picked');
+  const msgs={
+    'A':'الصديق قد يتأخر أو ما يعرف يشغّل البطارية صح.',
+    'B':'الكيبل يحتاج سيارة ثانية وخبرة، وأحياناً يضر البطارية.',
+    'C':'الخيار الأذكى! نوصلك بسرعة ونشغّل سيارتك بأمان.',
+    'D':'لا تحتار! نحن جاهزون على مدار 24 ساعة.'
+  };
+  const r=document.getElementById('pollResult');
+  if(r)r.innerHTML='✅ شكراً لمشاركتك! اخترت: '+option+'<br>'+(msgs[option]||'')+'<br>تحتاج مساعدة فورية؟ اتصل بنا الآن على 60601740.';
+}
