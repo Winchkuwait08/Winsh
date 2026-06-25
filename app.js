@@ -23,16 +23,6 @@ document.querySelectorAll('.qa button').forEach(b=>{
 const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-// Close floating panel when touching/clicking outside
-document.addEventListener('click',(e)=>{
-  const panel=document.getElementById('floatPanel'),openBtn=document.getElementById('floatOpen');
-  if(!panel||!openBtn)return;
-  // اگر پنل باز است و کلیک بیرون از پنل و بیرون از دکمه باز کردن بود
-  if(!panel.classList.contains('hidden')&&!panel.contains(e.target)&&!openBtn.contains(e.target)){
-    panel.classList.add('hidden');
-    openBtn.classList.add('show');
-  }
-},true);
 
 // Interactive battery poll
 function vote(btn,option){
@@ -72,3 +62,13 @@ function shareLocation(){
     {enableHighAccuracy:true,timeout:10000,maximumAge:0}
   );
 }
+
+// Close floating panel when touching/clicking outside
+document.addEventListener('click',(e)=>{
+  const panel=document.getElementById('floatPanel'),openBtn=document.getElementById('floatOpen');
+  if(!panel||!openBtn)return;
+  if(!panel.classList.contains('hidden')&&!panel.contains(e.target)&&!openBtn.contains(e.target)){
+    panel.classList.add('hidden');
+    openBtn.classList.add('show');
+  }
+},true);
