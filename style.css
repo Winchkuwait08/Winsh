@@ -122,7 +122,7 @@ header.scrolled{box-shadow:0 10px 30px -18px rgba(11,27,43,.4)}
 .emg-num b{font-family:'Cairo';font-weight:900;font-size:clamp(1.8rem,4vw,2.6rem);direction:ltr;unicode-bidi:isolate;letter-spacing:1px;display:inline-block}
 
 /* ---- Gallery (before/after) ---- */
-.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:42px}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:42px}
 .ba{position:relative;border-radius:20px;overflow:hidden;box-shadow:var(--shadow);background:var(--navy)}
 .ba img{width:100%;height:340px;object-fit:cover}
 .ba-label{position:absolute;top:14px;right:14px;background:var(--navy);color:#fff;font-family:'Cairo';font-weight:700;font-size:.82rem;padding:7px 15px;border-radius:50px}
@@ -242,6 +242,8 @@ footer{background:var(--ink);color:#9fb0c1;padding:60px 0 28px}
   .foot-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:680px){
+  .gal{grid-template-columns:1fr}
+  .ba img{height:240px}
   .logo-img{height:72px}
   .logo-name{font-size:.95rem}
   .logo-name span{font-size:.88rem}
