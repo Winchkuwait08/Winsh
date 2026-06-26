@@ -329,3 +329,5 @@ footer{background:var(--ink);color:#9fb0c1;padding:60px 0 28px}
 .fab-neon.loc.loading .loc-ic{animation:locPulse .8s infinite}
 @keyframes locPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(.85);opacity:.6}}
 .fab-neon.loc.loading b::after{content:"..."}
+.lang-switch{display:inline-flex;align-items:center;justify-content:center;min-width:46px;height:38px;padding:0 12px;border:1.5px solid rgba(29,227,122,.5);border-radius:50px;color:#1de37a;font-family:'Cairo';font-weight:800;font-size:.85rem;letter-spacing:.5px;transition:.25s;box-shadow:0 0 8px rgba(29,227,122,.15)}
+.lang-switch:hover{background:rgba(29,227,122,.12);transform:translateY(-2px)}
