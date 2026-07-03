@@ -341,3 +341,5 @@ padding:13px 30px;border-radius:50px;cursor:pointer;text-decoration:none;transit
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
+
+a.tel-link{color:#1de37a;font-weight:800;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(29,227,122,.5);white-space:nowrap;direction:ltr;unicode-bidi:isolate}
