@@ -7,6 +7,7 @@ if(hdr){addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>10
 const burger=document.getElementById('burger'),menu=document.getElementById('menu');
 if(burger&&menu){
   burger.addEventListener('click',()=>menu.classList.toggle('show'));
+  document.addEventListener('click',(e)=>{if(menu.classList.contains('show')&&!menu.contains(e.target)&&!burger.contains(e.target)){menu.classList.remove('show')}});
   menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('show')));
 }
 
