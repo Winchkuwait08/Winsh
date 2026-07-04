@@ -145,7 +145,7 @@ header.scrolled{box-shadow:0 10px 30px -18px rgba(11,27,43,.4)}
 @keyframes lrotate{from{transform:rotate(0)}to{transform:rotate(360deg)}}
 @keyframes lpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.3)}}
 @keyframes lshine{100%{left:160%}}
-.hero-media img{width:100%;border-radius:24px;box-shadow:0 40px 80px -30px rgba(0,0,0,.6);position:relative;z-index:2}
+.hero-media img{width:100%;aspect-ratio:600/315;object-fit:cover;border-radius:24px;box-shadow:0 40px 80px -30px rgba(0,0,0,.6);position:relative;z-index:2}
 .hero-media::after{content:"";position:absolute;inset:-18px -18px 24px;border:2px dashed rgba(255,178,0,.4);border-radius:30px;z-index:1}
 .badge-float{position:absolute;z-index:3;background:#0d1f17;color:#e8f5ee;border-radius:16px;padding:13px 17px;box-shadow:var(--shadow);display:flex;align-items:center;gap:11px;font-family:'Cairo';font-weight:800}
 .badge-float .dot{width:11px;height:11px;border-radius:50%;background:var(--green);box-shadow:0 0 8px rgba(37,211,102,.6)}
@@ -153,12 +153,6 @@ header.scrolled{box-shadow:0 10px 30px -18px rgba(11,27,43,.4)}
 .bf-2{bottom:30px;right:-14px;flex-direction:column;align-items:flex-start;gap:2px}
 .bf-2 b{font-size:1.5rem;color:var(--amber-d)}
 .bf-2 small{font-weight:500;color:var(--muted);font-family:'Tajawal'}
-
-/* marquee strip */
-.strip{background:var(--amber);color:#e8f5ee;overflow:hidden;white-space:nowrap;font-family:'Cairo';font-weight:800;padding:11px 0}
-.strip .track{display:inline-block;animation:slide 22s linear infinite}
-.strip .track span{margin:0 28px}
-@keyframes slide{from{transform:translateX(0)}to{transform:translateX(50%)}}
 
 /* ---- Services ---- */
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
@@ -226,7 +220,7 @@ header.scrolled{box-shadow:0 10px 30px -18px rgba(11,27,43,.4)}
 .step{background:#0d1f17;border:1px solid var(--line);border-radius:var(--r);padding:30px 24px;position:relative}
 .step .n{counter-increment:s;font-family:'Cairo';font-weight:900;font-size:2.4rem;color:var(--amber-soft);line-height:1}
 .step .n::before{content:"0" counter(s)}
-.step h4{color:#e8f5ee;font-size:1.15rem;margin:8px 0}
+.step h3{color:#e8f5ee;font-size:1.15rem;margin:8px 0}
 .step p{color:var(--muted);font-size:.93rem}
 
 /* ---- FAQ ---- */
@@ -354,6 +348,9 @@ footer{background:#0a1410;color:#c5d8cd;padding:60px 0 28px;border-top:1px solid
   .badge-float{display:none}
 }
 .gov-link{color:#e8f5ee;text-decoration:none;transition:color .2s,letter-spacing .2s;cursor:pointer}
+.ilinks{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.ilink{display:inline-flex;align-items:center;min-height:44px;padding:8px 14px;border-radius:10px;background:rgba(29,227,122,.08);border:1px solid var(--line);color:#cfe8db;font-size:.92rem}
+.ilink:hover{background:rgba(29,227,122,.16);color:#1de37a}
 .howto-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px;max-width:760px;margin-inline:auto}
 .howto-step{position:relative;background:linear-gradient(160deg,#0d1f17,#0a1410);border:1.5px solid rgba(29,227,122,.3);border-radius:20px;padding:30px 24px 24px;text-align:center}
 .hs-num{position:absolute;top:-18px;left:50%;transform:translateX(-50%);width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#1de37a,#0a8f4d);color:#06140d;display:grid;place-items:center;font-family:'Cairo';font-weight:900;font-size:1.3rem;box-shadow:0 0 16px rgba(29,227,122,.5)}
@@ -415,6 +412,7 @@ a.tel-link{color:#1de37a;font-weight:800;text-decoration:underline;text-underlin
   </div>
 </header>
 
+<main>
 <!-- Hero -->
 <section class="hero">
   <div class="wrap hero-grid">
@@ -447,14 +445,6 @@ a.tel-link{color:#1de37a;font-weight:800;text-decoration:underline;text-underlin
     </div>
   </div>
 </section>
-
-<!-- Strip -->
-<div class="strip">
-  <div class="track">
-    <span>🚗 سحب سيارات</span><span>🛻 سطحة هيدروليك</span><span>⚙️ نقل بين المحافظات</span><span>🔋 بطاريات وتشغيل</span><span>🛞 تبديل إطارات</span><span>🏗️ كرين سيارات</span>
-    <span>🚗 سحب سيارات</span><span>🛻 سطحة هيدروليك</span><span>⚙️ نقل بين المحافظات</span><span>🔋 بطاريات وتشغيل</span><span>🛞 تبديل إطارات</span><span>🏗️ كرين سيارات</span>
-  </div>
-</div>
 
 <!-- Services -->
 <section class="sec" id="services">
@@ -571,10 +561,10 @@ a.tel-link{color:#1de37a;font-weight:800;text-decoration:underline;text-underlin
       <h2 class="sec-title">كيف تطلب الونش؟</h2>
     </div>
     <div class="steps">
-      <div class="step reveal"><div class="n"></div><h4>اتصل أو راسل</h4><p>كلّمنا أو راسلنا على واتساب وأخبرنا بموقعك ونوع سيارتك.</p></div>
-      <div class="step reveal"><div class="n"></div><h4>سعر فوري واضح</h4><p>نعطيك السعر النهائي مباشرة قبل بدء الخدمة دون أي مفاجآت.</p></div>
-      <div class="step reveal"><div class="n"></div><h4>وصول سريع</h4><p>أقرب سطحة تتحرك إليك فوراً وتصلك خلال دقائق.</p></div>
-      <div class="step reveal"><div class="n"></div><h4>نقل آمن</h4><p>نحمّل سيارتك وننقلها بأمان إلى الوجهة التي تختارها.</p></div>
+      <div class="step reveal"><div class="n"></div><h3>اتصل أو راسل</h3><p>كلّمنا أو راسلنا على واتساب وأخبرنا بموقعك ونوع سيارتك.</p></div>
+      <div class="step reveal"><div class="n"></div><h3>سعر فوري واضح</h3><p>نعطيك السعر النهائي مباشرة قبل بدء الخدمة دون أي مفاجآت.</p></div>
+      <div class="step reveal"><div class="n"></div><h3>وصول سريع</h3><p>أقرب سطحة تتحرك إليك فوراً وتصلك خلال دقائق.</p></div>
+      <div class="step reveal"><div class="n"></div><h3>نقل آمن</h3><p>نحمّل سيارتك وننقلها بأمان إلى الوجهة التي تختارها.</p></div>
     </div>
   </div>
 </section>
@@ -760,7 +750,7 @@ a.tel-link{color:#1de37a;font-weight:800;text-decoration:underline;text-underlin
 <a href="areas/shuhada.html" class="ilink">ونش <span translate="no">الشهداء</span></a>
 <a href="areas/mubarak-abdullah.html" class="ilink">ونش <span translate="no">ضاحية مبارك العبدالله</span></a>
 <a href="areas/hawalli-city.html" class="ilink">ونش <span translate="no">حولي</span></a>
-<a href="areas/jabriya-2.html" class="ilink">ونش <span translate="no">الجابرية</span></a>
+<a href="areas/jabriya-2.html" class="ilink">ونش <span translate="no">الجابرية 2</span></a>
 <a href="areas/mishref.html" class="ilink">ونش <span translate="no">مشرف</span></a>
 <a href="areas/rumaithiya.html" class="ilink">ونش <span translate="no">الرميثية</span></a>
 <a href="areas/salmiya-2.html" class="ilink">ونش <span translate="no">السالمية</span></a>
@@ -797,6 +787,7 @@ a.tel-link{color:#1de37a;font-weight:800;text-decoration:underline;text-underlin
 </div>
 </section>
 <div class="totop-wrap" style="text-align:center;padding:30px 0 10px"><a href="#top" class="totop-btn" style="display:inline-flex;align-items:center;gap:9px;font-weight:800;font-size:1.05rem;color:#1de37a;background:rgba(29,227,122,.08);border:1.5px solid rgba(29,227,122,.5);padding:13px 30px;border-radius:50px;text-decoration:none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex:none"><path d="M12 19V5M5 12l7-7 7 7"/></svg> العودة إلى الأعلى</a></div>
+</main>
 <footer>
   <div class="wrap">
     <div class="foot-grid">
