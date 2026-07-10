@@ -327,7 +327,9 @@ footer{background:#0a1410;color:#c5d8cd;padding:60px 0 28px;border-top:1px solid
   .sec{padding:54px 0}
   .logo{font-size:1.05rem;gap:7px}
   .menu,.nav-cta{display:none}
-  .burger{display:flex}
+  .burger{display:flex;order:99}
+  [dir="rtl"] .burger{order:-1}
+  [dir="rtl"] .drawer-head{flex-direction:row-reverse}
   .menu{display:flex;position:fixed;top:0;right:-300px;left:auto;bottom:0;width:280px;max-width:82vw;flex-direction:column;background:#0d1f17;padding:0 0 24px;box-shadow:-8px 0 40px rgba(0,0,0,.55);gap:0;z-index:1001;transition:right .35s cubic-bezier(.22,.9,.3,1);overflow-y:auto;visibility:hidden}
   .menu.show{right:0;visibility:visible}
   .menu a{padding:14px 22px;border-bottom:1px solid rgba(29,227,122,.12);opacity:0;transform:translateX(18px);transition:opacity .3s,transform .3s}
@@ -337,7 +339,7 @@ footer{background:#0a1410;color:#c5d8cd;padding:60px 0 28px;border-top:1px solid
   .drawer-head b{color:#1de37a;font-family:'Cairo';font-size:1.05rem}
   .drawer-x{background:none;border:1px solid rgba(29,227,122,.4);color:#1de37a;width:36px;height:36px;border-radius:10px;font-size:1.15rem;line-height:1;cursor:pointer;transition:.25s}
   .drawer-x:hover{background:#1de37a;color:#06140d;transform:rotate(90deg)}
-  .menu-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(2px);opacity:0;visibility:hidden;transition:.3s;z-index:1000}
+  .menu-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);opacity:0;visibility:hidden;transition:.3s;z-index:55}
   .menu-overlay.show{opacity:1;visibility:visible}
   .burger.active span:nth-child(1){transform:translateY(8px) rotate(45deg)}
   .burger.active span:nth-child(2){opacity:0}
@@ -776,6 +778,7 @@ a.tel-link{color:#1de37a;font-weight:800;text-decoration:underline;text-underlin
 <div class="center reveal" style="margin-top:36px"><h3 style="font-size:1.3rem;margin:0"><a href="areas/farwaniya-city.html" class="gov-link">ونش محافظة <span translate="no">الفروانية</span></a></h3></div>
 <div class="ilinks" translate="no">
 <a href="areas/andalus.html" class="ilink">ونش <span translate="no">الأندلس</span></a>
+<a href="areas/abdullah-mubarak.html" class="ilink">ونش <span translate="no">عبدالله المبارك</span></a>
 <a href="areas/ardiya.html" class="ilink">ونش <span translate="no">العارضية</span></a>
 <a href="areas/farwaniya-city.html" class="ilink">ونش <span translate="no">الفروانية</span></a>
 <a href="areas/firdous.html" class="ilink">ونش <span translate="no">الفردوس</span></a>
@@ -798,6 +801,7 @@ a.tel-link{color:#1de37a;font-weight:800;text-decoration:underline;text-underlin
 <a href="areas/naseem.html" class="ilink">ونش <span translate="no">النسيم</span></a>
 <a href="areas/oyoun.html" class="ilink">ونش <span translate="no">العيون</span></a>
 <a href="areas/qasr.html" class="ilink">ونش <span translate="no">القصر</span></a>
+<a href="areas/salmi.html" class="ilink">ونش <span translate="no">السالمي</span></a>
 <a href="areas/waha.html" class="ilink">ونش <span translate="no">الواحة</span></a>
 </div>
 </div>
