@@ -6,9 +6,17 @@ if(hdr){addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>10
 // Mobile menu
 const burger=document.getElementById('burger'),menu=document.getElementById('menu');
 if(burger&&menu){
-  burger.addEventListener('click',()=>menu.classList.toggle('show'));
-  document.addEventListener('click',(e)=>{if(menu.classList.contains('show')&&!menu.contains(e.target)&&!burger.contains(e.target)){menu.classList.remove('show')}});
-  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('show')));
+const isEN=(document.documentElement.lang||'').startsWith('en');
+const ovl=document.createElement('div');ovl.className='menu-overlay';document.body.appendChild(ovl);
+const dh=document.createElement('div');dh.className='drawer-head';
+dh.innerHTML='<b>'+(isEN?'Menu':'القائمة')+'</b><button class="drawer-x" aria-label="'+(isEN?'Close menu':'إغلاق القائمة')+'">✕</button>';
+menu.prepend(dh);
+const openM=()=>{menu.classList.add('show');ovl.classList.add('show');burger.classList.add('active');document.body.style.overflow='hidden'};
+const closeM=()=>{menu.classList.remove('show');ovl.classList.remove('show');burger.classList.remove('active');document.body.style.overflow=''};
+burger.addEventListener('click',()=>menu.classList.contains('show')?closeM():openM());
+ovl.addEventListener('click',closeM);
+dh.querySelector('.drawer-x').addEventListener('click',closeM);
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeM));
 }
 
 // FAQ accordion

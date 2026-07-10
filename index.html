@@ -6,7 +6,7 @@
 <link rel="apple-touch-icon" href="https://ik.imagekit.io/Myupload/winch-kuwait-logo-60601740.webp?tr=w-180,h-180,e-brightness-18,e-contrast,e-sharpen-3">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ونش الكويت 24 ساعة | بدالة ونش ورقم ونش الكويت | سطحة هيدروليك | Kuwait Towing Service | 60601740</title>
-<meta name="description" content="ونش الكويت 24 ساعة لخدمات سحب ونقل السيارات في جميع مناطق الكويت. بدالة ونش ورقم ونش موحد، سطحة وكرين هيدروليك حديث للسيارات الرياضية والفاخرة والكهربائية. استجابة سريعة طوال اليوم. اتصل الآن 60601740.">
+<meta name="description" content="اتصل 60601740 - ونش الكويت 24 ساعة لخدمات سحب ونقل السيارات في جميع مناطق الكويت. بدالة ونش ورقم ونش موحد، سطحة وكرين هيدروليك حديث للسيارات الرياضية والفاخرة والكهربائية. استجابة سريعة طوال اليوم. اتصل الآن.">
 <meta name="keywords" content="ونش الكويت, ونش الكويت 24 ساعة, بدالة ونش, بدالة ونشات, رقم ونش, رقم ونش الكويت, كرين سيارات, كرين سطحة, سطحة الكويت, سطحة الجهراء, سطحة الاحمدي, سحب سيارات الكويت, نقل سيارات الكويت, أقرب ونش, ونش قريب مني, خدمة ونش سريعة, ونش مبارك الكبير, ونش الأحمدي, ونش حولي, ونش الفروانية, Kuwait towing service, Kuwait car recovery, tow truck Kuwait, towing service near me, car recovery Kuwait, 24 hour towing Kuwait, car towing service, car transportation, vehicle transport Kuwait, سطحه, سطحه الكويت, رقم سطحه, كرين سطحه, ونش سطحه">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#06140d">
@@ -21,7 +21,7 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_KW">
 <meta property="og:title" content="ونش الكويت 24 ساعة | سطحة هيدروليك تبدأ من 6 دينار | 60601740">
-<meta property="og:description" content="ونش الكويت 24 ساعة لسحب ونقل السيارات بأسعار تبدأ من 6 دينار. استجابة سريعة في جميع مناطق الكويت. اتصل الآن 60601740.">
+<meta property="og:description" content="اتصل 60601740 - ونش الكويت 24 ساعة لخدمات سحب ونقل السيارات في جميع مناطق الكويت. بدالة ونش ورقم ونش موحد، سطحة وكرين هيدروليك حديث للسيارات الرياضية والفاخرة والكهربائية. استجابة سريعة طوال اليوم. اتصل الآن.">
 <meta property="og:url" content="https://www.winshkuwait.com/">
 <meta property="og:image" content="https://ik.imagekit.io/Myupload/Nearest-towing-service-60601740.webp?updatedAt=1782988761778">
 <meta property="og:image:width" content="1200">
@@ -98,6 +98,7 @@ header.scrolled{box-shadow:0 10px 30px -18px rgba(11,27,43,.4)}
 .logo-mark{width:46px;height:46px;border-radius:13px;background:linear-gradient(150deg,var(--amber),var(--amber-d));display:grid;place-items:center;box-shadow:0 8px 20px -8px var(--amber-d)}
 .logo-mark svg{width:26px;height:26px}
 .logo span{color:#1de37a;text-shadow:0 0 12px rgba(29,227,122,.7),0 0 24px rgba(29,227,122,.45)}
+.drawer-head{display:none}
 .menu{display:flex;gap:26px;font-family:'Cairo';font-weight:600;font-size:.95rem}
 .menu a{position:relative;color:#e8f5ee;padding:4px 0;transition:.2s}
 .menu a::after{content:"";position:absolute;bottom:-3px;right:0;width:0;height:2px;background:var(--amber);transition:.3s}
@@ -327,7 +328,20 @@ footer{background:#0a1410;color:#c5d8cd;padding:60px 0 28px;border-top:1px solid
   .logo{font-size:1.05rem;gap:7px}
   .menu,.nav-cta{display:none}
   .burger{display:flex}
-  .menu.show{display:flex;position:absolute;top:100%;right:0;left:0;flex-direction:column;background:#0d1f17;padding:18px 24px;box-shadow:var(--shadow);gap:14px}
+  .menu{display:flex;position:fixed;top:0;right:-300px;left:auto;bottom:0;width:280px;max-width:82vw;flex-direction:column;background:#0d1f17;padding:0 0 24px;box-shadow:-8px 0 40px rgba(0,0,0,.55);gap:0;z-index:1001;transition:right .35s cubic-bezier(.22,.9,.3,1);overflow-y:auto;visibility:hidden}
+  .menu.show{right:0;visibility:visible}
+  .menu a{padding:14px 22px;border-bottom:1px solid rgba(29,227,122,.12);opacity:0;transform:translateX(18px);transition:opacity .3s,transform .3s}
+  .menu.show a{opacity:1;transform:none}
+  .menu.show a:nth-child(2){transition-delay:.05s}.menu.show a:nth-child(3){transition-delay:.1s}.menu.show a:nth-child(4){transition-delay:.15s}.menu.show a:nth-child(5){transition-delay:.2s}.menu.show a:nth-child(6){transition-delay:.25s}
+  .drawer-head{display:flex !important;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid rgba(29,227,122,.25);background:rgba(29,227,122,.06)}
+  .drawer-head b{color:#1de37a;font-family:'Cairo';font-size:1.05rem}
+  .drawer-x{background:none;border:1px solid rgba(29,227,122,.4);color:#1de37a;width:36px;height:36px;border-radius:10px;font-size:1.15rem;line-height:1;cursor:pointer;transition:.25s}
+  .drawer-x:hover{background:#1de37a;color:#06140d;transform:rotate(90deg)}
+  .menu-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(2px);opacity:0;visibility:hidden;transition:.3s;z-index:1000}
+  .menu-overlay.show{opacity:1;visibility:visible}
+  .burger.active span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  .burger.active span:nth-child(2){opacity:0}
+  .burger.active span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
   .topbar .tb-r{display:none}
   .cards,.reviews,.areas,.steps,.foot-grid,.gal{grid-template-columns:1fr}
   .ba img{height:240px}
@@ -857,9 +871,17 @@ addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>10),{passi
 
 // Mobile menu
 const burger=document.getElementById('burger'),menu=document.getElementById('menu');
-burger.addEventListener('click',()=>menu.classList.toggle('show'));
-document.addEventListener('click',(e)=>{if(menu.classList.contains('show')&&!menu.contains(e.target)&&!burger.contains(e.target)){menu.classList.remove('show')}});
-menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('show')));
+const isEN=(document.documentElement.lang||'').startsWith('en');
+const ovl=document.createElement('div');ovl.className='menu-overlay';document.body.appendChild(ovl);
+const dh=document.createElement('div');dh.className='drawer-head';
+dh.innerHTML='<b>'+(isEN?'Menu':'القائمة')+'</b><button class="drawer-x" aria-label="'+(isEN?'Close menu':'إغلاق القائمة')+'">✕</button>';
+menu.prepend(dh);
+const openM=()=>{menu.classList.add('show');ovl.classList.add('show');burger.classList.add('active');document.body.style.overflow='hidden'};
+const closeM=()=>{menu.classList.remove('show');ovl.classList.remove('show');burger.classList.remove('active');document.body.style.overflow=''};
+burger.addEventListener('click',()=>menu.classList.contains('show')?closeM():openM());
+ovl.addEventListener('click',closeM);
+dh.querySelector('.drawer-x').addEventListener('click',closeM);
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeM));
 
 // FAQ accordion
 document.querySelectorAll('.qa button').forEach(b=>{
